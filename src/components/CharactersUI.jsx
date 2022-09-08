@@ -2,6 +2,8 @@ import { useContext } from "react";
 import {CharactersContext} from "../context/CharacterContext"
 import FilterButton from "./FilterButton";
 import FilterSearch from "./FilterSearch";
+import "./styles.css";
+
 
 const CharacterUI = () => {                                             
     const {state} = useContext(CharactersContext)
