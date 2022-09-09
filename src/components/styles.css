@@ -9,3 +9,7 @@ table {
     text-align: left;
     padding: 8px;
   }
+
+tr:active {
+  background-color: lightgreen;
+}
