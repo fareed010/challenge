@@ -7,22 +7,15 @@ import "./styles.css";
 
 
 const CharacterUI = () => {                                             
-    const {state} = useContext(CharactersContext)
-    const [tableID, setTableID] = useState({tableId: null, bgColor: null});
+    const { state, dispatch } = useContext(CharactersContext)
 
     const handleCharacterRow = (e) => {
-        console.log(e);   
-        setTableID(() => {
-            return {
-                tableId: e,
-                bgColor: 'lightgreen'
-            }
-        });
+        dispatch({type: "SELECTED_CHARACTER_TABLE", payload: e})   
     }
 
     return (
         <>
-            <SelectedTableUI id={tableID.tableId} />
+            <SelectedTableUI />
 
             <FilterSearch />
             <FilterButton />

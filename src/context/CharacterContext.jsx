@@ -58,12 +58,17 @@ const stateReducer = (state = [], action) => {
            })
 
         return {...state, data: filterSearch}
+
+    case "SELECTED_CHARACTER_TABLE":
+        return {...state, selectedCharactors: [...state.selectedCharactors, payload]}
+
+    
     default:
         return state    
   }
 }
 
-const characterState = {data};
+const characterState = {data, selectedCharactors: []};
 
 const CharactersProvider = ({ children }) => {
     const [state, dispatch] = useReducer (stateReducer, characterState);
